@@ -7,8 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.academy_movie.R
 import com.example.academy_movie.databinding.FragmentHomeBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
 
     //binding
