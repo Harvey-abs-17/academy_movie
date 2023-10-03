@@ -2,4 +2,6 @@
 <resources>
 	<color name="black">#FF000000</color>
 	<color name="white">#FFFFFFFF</color>
+	<color name="tropicalIndigo">#7761FF</color>
+	<color name="periwinkle">#D0D0F8</color>
 </resources>
