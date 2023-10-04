@@ -42,9 +42,7 @@ class DetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        detailArgs.movieId?.let {
-            loadData(it)
-        }
+        loadData(detailArgs.movieId)
         showLoading()
         loadSimilarMoviesData()
         binding.backBtn.setOnClickListener {
