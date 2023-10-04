@@ -21,6 +21,11 @@ class HomeMovieAdapter @Inject constructor() :PagingDataAdapter<SearchMovieRespo
             binding.apply {
                 Picasso.get().load(item.poster).into(itemImage)
                 itemMovieNameTxt.text = item.title
+                root.setOnClickListener {
+                    onItemClickListener?.let {
+                        it(item.imdbID!!)
+                    }
+                }
             }
         }
 
@@ -37,6 +42,11 @@ class HomeMovieAdapter @Inject constructor() :PagingDataAdapter<SearchMovieRespo
 
     override fun getItemViewType(position: Int): Int {
         return position
+    }
+
+    private var onItemClickListener :((movie_id :String) -> Unit)? = null
+    fun itemClickListener( listener :(movie_id :String) -> Unit ){
+        onItemClickListener = listener
     }
 
     companion object{

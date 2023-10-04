@@ -39,7 +39,11 @@
 					app:layout_constraintBottom_toBottomOf="parent"
 					app:layout_constraintStart_toStartOf="parent"
 					app:layout_constraintTop_toTopOf="parent"
-					app:tint="@color/tropicalIndigo" />
+					app:tint="@color/tropicalIndigo"
+					android:background="@drawable/bg_detail_header_icon"
+					android:alpha=".8"
+					android:padding="10dp"
+					android:id="@+id/back_btn"/>
 				
 				<ImageView
 					android:layout_width="wrap_content"
@@ -48,7 +52,10 @@
 					app:layout_constraintBottom_toBottomOf="parent"
 					app:layout_constraintEnd_toEndOf="parent"
 					app:layout_constraintTop_toTopOf="parent"
-					app:tint="@color/tropicalIndigo" />
+					app:tint="@color/tropicalIndigo"
+					android:background="@drawable/bg_detail_header_icon"
+					android:alpha=".8"
+					android:padding="10dp"/>
 			
 			
 			</androidx.constraintlayout.widget.ConstraintLayout>
@@ -83,13 +90,16 @@
 					app:layout_constraintEnd_toEndOf="parent"
 					app:layout_constraintStart_toStartOf="parent"
 					app:layout_constraintTop_toTopOf="parent"
-					app:tint="@color/tropicalIndigo" />
+					app:tint="@color/tropicalIndigo"
+					android:background="@drawable/bg_play_detail_icon"
+					android:alpha=".8"/>
 			
 			
 			</androidx.constraintlayout.widget.ConstraintLayout>
 			
 			<!--	detail movie info container		-->
 			<androidx.constraintlayout.widget.ConstraintLayout
+				android:id="@+id/info_container"
 				android:layout_width="match_parent"
 				android:layout_height="match_parent"
 				android:layout_marginTop="-50dp"
@@ -165,59 +175,34 @@
 						
 						</com.google.android.material.card.MaterialCardView>
 						
-						<!--		year of movie			-->
-						<TextView
-							android:id="@+id/movie_year"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:layout_marginEnd="20dp"
-							android:text="2022"
-							android:textColor="@color/black"
-							app:layout_constraintEnd_toStartOf="@id/movie_image_card_view"
-							app:layout_constraintTop_toTopOf="parent" />
-						
-						<!--		movie name ( persian ) 			-->
-						<TextView
-							android:id="@+id/movie_name_persian"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:layout_marginTop="16dp"
-							android:layout_marginEnd="12dp"
-							android:maxLines="1"
-							android:textColor="@color/black"
-							android:textSize="20sp"
-							android:textStyle="bold"
-							app:layout_constraintEnd_toStartOf="@id/movie_image_card_view"
-							app:layout_constraintTop_toBottomOf="@id/movie_year"
-							tools:text="(نام فیلم)" />
 						
 						<!--		movie name ( English ) 			-->
 						<TextView
 							android:id="@+id/movie_name_english"
-							android:layout_width="wrap_content"
+							android:layout_width="210dp"
 							android:layout_height="wrap_content"
-							android:layout_marginEnd="12dp"
-							android:maxLines="1"
+							android:layout_marginTop="20dp"
+							android:maxLines="2"
 							android:textColor="@color/black"
-							android:textSize="20sp"
+							android:textSize="16sp"
 							android:textStyle="bold"
 							app:layout_constraintStart_toStartOf="parent"
-							app:layout_constraintTop_toTopOf="@id/movie_name_persian"
+							app:layout_constraintTop_toBottomOf="@id/movie_time_txt"
+							app:layout_constraintEnd_toStartOf="@id/movie_image_card_view"
 							tools:text="Movie Name" />
 						
 						<!--		movie short description			-->
 						<TextView
 							android:id="@+id/movie_short_description"
-							android:layout_width="wrap_content"
+							android:layout_width="210dp"
 							android:layout_height="wrap_content"
 							android:layout_marginTop="12dp"
-							android:layout_marginEnd="12dp"
 							android:maxLines="3"
 							android:textColor="@color/black"
 							android:textSize="14sp"
+							app:layout_constraintStart_toStartOf="parent"
 							app:layout_constraintEnd_toStartOf="@id/movie_image_card_view"
-							app:layout_constraintTop_toBottomOf="@id/movie_name_persian"
-							tools:text="لورم ایپسوم" />
+							app:layout_constraintTop_toBottomOf="@id/movie_name_english"/>
 						
 						<!--		movie imdb rate			-->
 						<TextView
@@ -227,7 +212,9 @@
 							android:maxLines="3"
 							android:textColor="@color/black"
 							android:textSize="14sp"
+							android:textStyle="bold"
 							app:layout_constraintStart_toStartOf="parent"
+							app:layout_constraintBottom_toTopOf="@id/movie_icons_container"
 							app:layout_constraintTop_toBottomOf="@id/movie_short_description"
 							tools:text="IMDB :8.3" />
 						
@@ -268,7 +255,7 @@
 									android:textAlignment="center"
 									android:textColor="@color/black"
 									android:textSize="14sp"
-									tools:text="نشان کردن" />
+									android:text="book mark"/>
 							
 							</LinearLayout>
 							
@@ -295,7 +282,7 @@
 									android:textAlignment="center"
 									android:textColor="@color/black"
 									android:textSize="14sp"
-									tools:text="67" />
+									android:text="11" />
 							
 							</LinearLayout>
 							
@@ -322,7 +309,7 @@
 									android:textAlignment="center"
 									android:textColor="@color/black"
 									android:textSize="14sp"
-									tools:text="67" />
+									android:text="204" />
 							
 							</LinearLayout>
 							
@@ -349,7 +336,7 @@
 									android:textAlignment="center"
 									android:textColor="@color/black"
 									android:textSize="14sp"
-									tools:text="67" />
+									android:text="67" />
 							
 							</LinearLayout>
 						
@@ -359,7 +346,7 @@
 						<!--		movie long description			-->
 						<TextView
 							android:id="@+id/movie_long_description"
-							android:layout_width="wrap_content"
+							android:layout_width="match_parent"
 							android:layout_height="wrap_content"
 							android:layout_marginTop="12dp"
 							android:layout_marginEnd="12dp"
@@ -367,6 +354,7 @@
 							android:textColor="@color/black"
 							android:textSize="14sp"
 							app:layout_constraintEnd_toEndOf="parent"
+							app:layout_constraintStart_toStartOf="parent"
 							app:layout_constraintTop_toBottomOf="@id/movie_icons_container"
 							tools:text="لورم ایپسوم" />
 						
@@ -395,7 +383,7 @@
 							android:id="@+id/similar_movies_txt_title"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
-							android:text="یشنهاد های مشابه"
+							android:text="Similar Movies"
 							android:textColor="@color/tropicalIndigo"
 							android:textSize="20sp"
 							android:textStyle="bold"
@@ -412,7 +400,7 @@
 							app:tint="@color/tropicalIndigo" />
 						
 						<androidx.recyclerview.widget.RecyclerView
-							android:id="@+id/similar_movie_name"
+							android:id="@+id/similar_movie_rec"
 							android:layout_width="match_parent"
 							android:layout_height="wrap_content"
 							android:orientation="horizontal"
@@ -420,7 +408,8 @@
 							app:layout_constraintEnd_toEndOf="parent"
 							app:layout_constraintStart_toStartOf="parent"
 							app:layout_constraintTop_toBottomOf="@id/similar_movies_txt_title"
-							tools:listitem="@layout/item_movie" />
+							tools:listitem="@layout/item_movie"
+							android:layout_marginTop="8dp"/>
 					
 					
 					</androidx.constraintlayout.widget.ConstraintLayout>
@@ -435,5 +424,16 @@
 	
 	
 	</androidx.core.widget.NestedScrollView>
+	
+	<!--  loading	-->
+	<ProgressBar
+		android:id="@+id/detail_loading"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:visibility="gone"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
