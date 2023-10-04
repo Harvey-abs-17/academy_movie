@@ -10,7 +10,7 @@ data class SearchMovieResponse(
     @SerializedName("Response")
     var response: String?, // True
     @SerializedName("Search")
-    var search: List<Search?>?,
+    var search: List<Search>,
     @SerializedName("totalResults")
     var totalResults: String? // 545
 ) : Parcelable {
